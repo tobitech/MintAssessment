@@ -21,8 +21,21 @@ class ViewController: UIViewController {
         label.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
+        
+        findRepo()
     }
 
+    func findRepo() {
+        let service = NetworkService()
+        service.findRepositories(with: "rails") { (repos, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            print(repos?.count ?? 0)
+        }
+    }
 
 }
 
