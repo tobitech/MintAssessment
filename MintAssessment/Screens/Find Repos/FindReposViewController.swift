@@ -21,6 +21,7 @@ class FindReposViewController: UIViewController {
         viewModel = FindReposViewModel()
         
         searchBar.delegate = self
+        searchBar.searchTextField.autocapitalizationType = .none
         tableView.delegate = self
         tableView.dataSource = self
         

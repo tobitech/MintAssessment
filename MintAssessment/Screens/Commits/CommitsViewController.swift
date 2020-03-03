@@ -16,6 +16,8 @@ class CommitsViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.title = viewModel.title
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60.0
         
         viewModel.commitsDidChange = { [unowned self] _ in
             DispatchQueue.main.async {
