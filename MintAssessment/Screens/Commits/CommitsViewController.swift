@@ -14,6 +14,14 @@ class CommitsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = viewModel.title
+        
+        viewModel.commitsDidChange = { [unowned self] _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
 }

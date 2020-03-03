@@ -67,6 +67,18 @@ extension FindReposViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let repo = viewModel.repo(at: indexPath.row) else { return }
+        
+        let vm = CommitsViewModel(repo: repo)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = sb.instantiateViewController(identifier: "CommitsViewController") as! CommitsViewController
+        vc.viewModel = vm
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 

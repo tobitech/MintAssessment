@@ -18,13 +18,13 @@ class FindReposViewModel {
 
     var reposDidChange: (([Repo]) -> Void)?
     
-    var repos = [Repo]() {
+    private var repos = [Repo]() {
         didSet {
             reposDidChange?(repos)
         }
     }
     
-    let service: NetworkService
+    private let service: NetworkService
     
     init(service: NetworkService = NetworkService()) {
         self.service = service
@@ -51,7 +51,7 @@ class FindReposViewModel {
         return repos.count
     }
     
-    private func repo(at index: Int) -> Repo? {
+    func repo(at index: Int) -> Repo? {
         guard index < repos.count else {
             return nil
         }

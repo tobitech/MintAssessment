@@ -11,20 +11,26 @@ import Foundation
 class CommitsViewModel {
     
     // MARK: Properties
-    let service: NetworkService
-    let repo: Repo
+    private let service: NetworkService
+    private let repo: Repo
     var commitsDidChange: (([Commit]) -> Void)?
     
-    var commits = [Commit]() {
+    private var commits = [Commit]() {
         didSet {
             commitsDidChange?(commits)
         }
+    }
+    
+    var title: String {
+        return "\(repo.full_name ?? "")"
     }
     
     // MARK: Init
     init(service: NetworkService = NetworkService(), repo: Repo) {
         self.service = service
         self.repo = repo
+        
+        listCommits()
     }
     
     // MARK: Helpers
