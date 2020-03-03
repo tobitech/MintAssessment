@@ -59,7 +59,11 @@ extension FindReposViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepoCellId", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        
+        if let cellViewModel = viewModel.viewModelForRepo(at: indexPath) {
+            cell.textLabel?.text = cellViewModel.repoName
+        }
+        
         return cell
     }
     

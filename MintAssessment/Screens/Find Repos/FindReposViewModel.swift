@@ -51,4 +51,20 @@ class FindReposViewModel {
         return repos.count
     }
     
+    private func repo(at index: Int) -> Repo? {
+        guard index < repos.count else {
+            return nil
+        }
+        
+        return repos[index]
+    }
+    
+    func viewModelForRepo(at indexPath: IndexPath) -> RepoCellViewModel? {
+        guard let repo = repo(at: indexPath.row) else {
+            return nil
+        }
+        
+        return RepoCellViewModel(repoName: repo.full_name ?? "")
+    }
+    
 }

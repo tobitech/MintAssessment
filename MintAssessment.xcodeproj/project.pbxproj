@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200FC25E240E89DF00BD0DAD /* RepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC25D240E89DF00BD0DAD /* RepoCellViewModel.swift */; };
 		20717FB7240E7D0700A1724E /* FindReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20717FB6240E7D0700A1724E /* FindReposViewModel.swift */; };
 		20717FBB240E82EE00A1724E /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20717FBA240E82EE00A1724E /* RepoCell.swift */; };
 		20FDE99C240E67D80060096F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FDE99B240E67D80060096F /* AppDelegate.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		200FC25D240E89DF00BD0DAD /* RepoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellViewModel.swift; sourceTree = "<group>"; };
 		20717FB6240E7D0700A1724E /* FindReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindReposViewModel.swift; sourceTree = "<group>"; };
 		20717FBA240E82EE00A1724E /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		20FDE998240E67D70060096F /* MintAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MintAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +47,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		200FC25C240E89C300BD0DAD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				20717FBA240E82EE00A1724E /* RepoCell.swift */,
+				200FC25D240E89DF00BD0DAD /* RepoCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		20717FB8240E819700A1724E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +69,7 @@
 			children = (
 				20FDE99F240E67D80060096F /* FindReposViewController.swift */,
 				20717FB6240E7D0700A1724E /* FindReposViewModel.swift */,
-				20717FBA240E82EE00A1724E /* RepoCell.swift */,
+				200FC25C240E89C300BD0DAD /* Cell */,
 			);
 			path = "Find Repos";
 			sourceTree = "<group>";
@@ -186,6 +197,7 @@
 				20717FBB240E82EE00A1724E /* RepoCell.swift in Sources */,
 				20FDE9B0240E69770060096F /* NetworkService.swift in Sources */,
 				20717FB7240E7D0700A1724E /* FindReposViewModel.swift in Sources */,
+				200FC25E240E89DF00BD0DAD /* RepoCellViewModel.swift in Sources */,
 				20FDE99C240E67D80060096F /* AppDelegate.swift in Sources */,
 				20FDE9B7240E76F00060096F /* Endpoint.swift in Sources */,
 				20FDE9B4240E6BA50060096F /* Repo.swift in Sources */,

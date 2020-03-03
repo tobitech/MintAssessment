@@ -10,7 +10,7 @@ import Foundation
 
 struct Repo: Decodable {
     let id: Int?
-    let name: String?
+    let full_name: String?
 }
 
 struct SearchRepoResponse: Decodable {
