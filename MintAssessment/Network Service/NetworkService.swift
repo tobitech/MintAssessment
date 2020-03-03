@@ -18,25 +18,6 @@ class NetworkService {
     
     let urlSession = URLSession.shared
     
-    func findRepositories(with query: String, completion: @escaping ([Repo]?, Error?) -> ()) {
-        request(.search(matching: query)) { result in
-            switch result {
-            case .success(let data):
-                let decoder = JSONDecoder()
-                do {
-                    let response = try decoder.decode(SearchRepoResponse.self, from: data)
-                    completion(response.items, nil)
-                } catch let jsonError {
-                    print(jsonError)
-                    completion(nil, jsonError)
-                }
-            case .failure(let error):
-                print("failed")
-                completion(nil, error)
-            }
-        }
-    }
-    
     func request(_ endpoint: Endpoint, completion: @escaping (Result<Data, Error>) -> Void) {
         guard let url = endpoint.url else {
             return completion(.failure(NetworkError.invalidURL))

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FindReposViewController.swift
 //  MintAssessment
 //
 //  Created by Oluwatobi Omotayo on 03/03/2020.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FindReposViewController: UIViewController {
+    
+    let viewModel = ReposViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,7 @@ class ViewController: UIViewController {
     }
 
     func findRepo() {
-        let service = NetworkService()
-        service.findRepositories(with: "rails") { (repos, error) in
+        viewModel.findRepositories(with: "rails") { repos, error in
             if let error = error {
                 print(error.localizedDescription)
                 return
