@@ -22,6 +22,13 @@ extension Endpoint {
             ]
         )
     }
+    
+    static func listCommits(for repo: Repo) -> Endpoint {
+        return Endpoint(
+            path: "/repos/\(repo.owner?.login ?? "")/\(repo.name ?? "")/commits",
+            queryItems: []
+        )
+    }
 }
 
 extension Endpoint {

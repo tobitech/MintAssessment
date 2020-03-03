@@ -8,12 +8,20 @@
 
 import Foundation
 
-struct Repo: Decodable {
-    let id: Int?
-    let full_name: String?
-}
-
 struct SearchRepoResponse: Decodable {
     let total_count: Int
     let items: [Repo]
 }
+
+struct Repo: Decodable {
+    let id: Int?
+    let name: String?
+    let full_name: String?
+    let owner: Owner?
+}
+
+struct Owner: Decodable {
+    let id: Int?
+    let login: String
+}
+
