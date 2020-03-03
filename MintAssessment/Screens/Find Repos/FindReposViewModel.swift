@@ -17,11 +17,11 @@ class FindReposViewModel {
         }
     }
 
-    var reposDidChange: (([Repo]) -> Void)?
+    var reposDidChange: (([Repo], _ errorMessage: String?) -> Void)?
     
     private var repos = [Repo]() {
         didSet {
-            reposDidChange?(repos)
+            reposDidChange?(repos, nil)
         }
     }
     
@@ -42,10 +42,10 @@ class FindReposViewModel {
                     let response = try decoder.decode(SearchRepoResponse.self, from: data)
                     self?.repos = response.items
                 } catch let jsonError {
-                    print(jsonError.localizedDescription)
+                    self?.reposDidChange?([], jsonError.localizedDescription)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                self?.reposDidChange?([], error.localizedDescription)
             }
         }
     }

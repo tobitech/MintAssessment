@@ -19,8 +19,13 @@ class CommitsViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 60.0
         
-        viewModel.commitsDidChange = { [unowned self] _ in
+        viewModel.commitsDidChange = { [unowned self] _, message in
             DispatchQueue.main.async {
+                if let message = message {
+                    self.showAlert(title: "Error", message: message)
+                    return
+                }
+                
                 self.tableView.reloadData()
             }
         }

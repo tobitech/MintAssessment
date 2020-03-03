@@ -25,8 +25,12 @@ class FindReposViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        viewModel.reposDidChange = { [unowned self] _ in
+        viewModel.reposDidChange = { [unowned self] _, message in
             DispatchQueue.main.async {
+                if let message = message {
+                    self.showAlert(title: "Error", message: message)
+                    return
+                }
                 self.tableView.reloadData()
             }
         }

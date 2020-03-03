@@ -13,11 +13,11 @@ class CommitsViewModel {
     // MARK: Properties
     private let service: NetworkService
     private let repo: Repo
-    var commitsDidChange: (([Commit]) -> Void)?
+    var commitsDidChange: (([Commit], _ errorMessage: String?) -> Void)?
     
     private var commits = [Commit]() {
         didSet {
-            commitsDidChange?(commits)
+            commitsDidChange?(commits, nil)
         }
     }
     
@@ -43,10 +43,10 @@ class CommitsViewModel {
                     let response = try decoder.decode([CommitData].self, from: data)
                     self?.commits = response.compactMap { $0.commit }
                 } catch let jsonError {
-                    print(jsonError.localizedDescription)
+                    self?.commitsDidChange?([], jsonError.localizedDescription)
                 }
             case .failure(let error):
-                print(error.localizedDescription)
+                self?.commitsDidChange?([], error.localizedDescription)
             }
         }
     }

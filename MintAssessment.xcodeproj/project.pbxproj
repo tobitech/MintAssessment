@@ -12,6 +12,7 @@
 		200FC264240E8FF400BD0DAD /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC263240E8FF400BD0DAD /* Commit.swift */; };
 		200FC266240E955900BD0DAD /* CommitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC265240E955900BD0DAD /* CommitsViewController.swift */; };
 		200FC269240E9AB000BD0DAD /* CommitCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC268240E9AB000BD0DAD /* CommitCellViewModel.swift */; };
+		200FC26F240EA0FE00BD0DAD /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200FC26E240EA0FD00BD0DAD /* UIViewController+.swift */; };
 		20717FB7240E7D0700A1724E /* FindReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20717FB6240E7D0700A1724E /* FindReposViewModel.swift */; };
 		20717FBB240E82EE00A1724E /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20717FBA240E82EE00A1724E /* RepoCell.swift */; };
 		20FDE99C240E67D80060096F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FDE99B240E67D80060096F /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 		200FC263240E8FF400BD0DAD /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
 		200FC265240E955900BD0DAD /* CommitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewController.swift; sourceTree = "<group>"; };
 		200FC268240E9AB000BD0DAD /* CommitCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitCellViewModel.swift; sourceTree = "<group>"; };
+		200FC26E240EA0FD00BD0DAD /* UIViewController+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		20717FB6240E7D0700A1724E /* FindReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindReposViewModel.swift; sourceTree = "<group>"; };
 		20717FBA240E82EE00A1724E /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		20FDE998240E67D70060096F /* MintAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MintAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		200FC26D240EA0ED00BD0DAD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				200FC26E240EA0FD00BD0DAD /* UIViewController+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		20717FB8240E819700A1724E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 				20FDE9B5240E76BA0060096F /* Network Service */,
 				20FDE9B8240E77290060096F /* Models */,
 				20717FB8240E819700A1724E /* Screens */,
+				200FC26D240EA0ED00BD0DAD /* Extensions */,
 				20FDE9A1240E67D80060096F /* Main.storyboard */,
 				20FDE9A4240E67DA0060096F /* Assets.xcassets */,
 				20FDE9A6240E67DA0060096F /* LaunchScreen.storyboard */,
@@ -230,6 +241,7 @@
 				200FC25E240E89DF00BD0DAD /* RepoCellViewModel.swift in Sources */,
 				20FDE99C240E67D80060096F /* AppDelegate.swift in Sources */,
 				200FC266240E955900BD0DAD /* CommitsViewController.swift in Sources */,
+				200FC26F240EA0FE00BD0DAD /* UIViewController+.swift in Sources */,
 				20FDE9B7240E76F00060096F /* Endpoint.swift in Sources */,
 				200FC262240E8F0E00BD0DAD /* CommitsViewModel.swift in Sources */,
 				20FDE9B4240E6BA50060096F /* Repo.swift in Sources */,
