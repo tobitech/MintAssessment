@@ -34,8 +34,8 @@ class FindReposViewModel {
         service.request(.search(matching: query)) {[weak self] result in
             switch result {
             case .success(let data):
-                let decoder = JSONDecoder()
                 do {
+                    let decoder = JSONDecoder()
                     let response = try decoder.decode(SearchRepoResponse.self, from: data)
                     self?.repos = response.items
                 } catch let jsonError {
