@@ -8,11 +8,11 @@
 
 import Foundation
 
-class ReposViewModel {
+class FindReposViewModel {
     
     var query: String = "" {
         didSet {
-            findRepositories(with: query)
+            findRepositories(with: query.lowercased())
         }
     }
 
@@ -30,7 +30,7 @@ class ReposViewModel {
         self.service = service
     }
     
-    func findRepositories(with query: String) {
+    private func findRepositories(with query: String) {
         service.request(.search(matching: query)) {[weak self] result in
             switch result {
             case .success(let data):
@@ -45,6 +45,10 @@ class ReposViewModel {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func numberOfRepos() -> Int {
+        return repos.count
     }
     
 }

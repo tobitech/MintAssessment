@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20717FB7240E7D0700A1724E /* FindReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20717FB6240E7D0700A1724E /* FindReposViewModel.swift */; };
+		20717FBB240E82EE00A1724E /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20717FBA240E82EE00A1724E /* RepoCell.swift */; };
 		20FDE99C240E67D80060096F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FDE99B240E67D80060096F /* AppDelegate.swift */; };
 		20FDE9A0240E67D80060096F /* FindReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FDE99F240E67D80060096F /* FindReposViewController.swift */; };
 		20FDE9A3240E67D80060096F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20FDE9A1240E67D80060096F /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		20717FB6240E7D0700A1724E /* FindReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindReposViewModel.swift; sourceTree = "<group>"; };
+		20717FBA240E82EE00A1724E /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
 		20FDE998240E67D70060096F /* MintAssessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MintAssessment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20FDE99B240E67D80060096F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20FDE99F240E67D80060096F /* FindReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindReposViewController.swift; sourceTree = "<group>"; };
@@ -43,12 +45,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		20717FB5240E7C9200A1724E /* View Models */ = {
+		20717FB8240E819700A1724E /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				20717FB6240E7D0700A1724E /* FindReposViewModel.swift */,
+				20717FB9240E81B900A1724E /* Find Repos */,
 			);
-			path = "View Models";
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		20717FB9240E81B900A1724E /* Find Repos */ = {
+			isa = PBXGroup;
+			children = (
+				20FDE99F240E67D80060096F /* FindReposViewController.swift */,
+				20717FB6240E7D0700A1724E /* FindReposViewModel.swift */,
+				20717FBA240E82EE00A1724E /* RepoCell.swift */,
+			);
+			path = "Find Repos";
 			sourceTree = "<group>";
 		};
 		20FDE98F240E67D70060096F = {
@@ -73,8 +85,7 @@
 				20FDE99B240E67D80060096F /* AppDelegate.swift */,
 				20FDE9B5240E76BA0060096F /* Network Service */,
 				20FDE9B8240E77290060096F /* Models */,
-				20717FB5240E7C9200A1724E /* View Models */,
-				20FDE99F240E67D80060096F /* FindReposViewController.swift */,
+				20717FB8240E819700A1724E /* Screens */,
 				20FDE9A1240E67D80060096F /* Main.storyboard */,
 				20FDE9A4240E67DA0060096F /* Assets.xcassets */,
 				20FDE9A6240E67DA0060096F /* LaunchScreen.storyboard */,
@@ -172,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20FDE9A0240E67D80060096F /* FindReposViewController.swift in Sources */,
+				20717FBB240E82EE00A1724E /* RepoCell.swift in Sources */,
 				20FDE9B0240E69770060096F /* NetworkService.swift in Sources */,
 				20717FB7240E7D0700A1724E /* FindReposViewModel.swift in Sources */,
 				20FDE99C240E67D80060096F /* AppDelegate.swift in Sources */,
