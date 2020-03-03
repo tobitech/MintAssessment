@@ -13,7 +13,7 @@ struct CommitData: Decodable {
 }
 
 struct Commit: Decodable {
-    let message: String
+    let message: String?
     let author: Author?
 }
 

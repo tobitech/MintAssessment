@@ -10,6 +10,7 @@ import Foundation
 
 class FindReposViewModel {
     
+    // MARK: Properties
     var query: String = "" {
         didSet {
             findRepositories(with: query.lowercased())
@@ -26,10 +27,12 @@ class FindReposViewModel {
     
     private let service: NetworkService
     
+    // MARK: Init
     init(service: NetworkService = NetworkService()) {
         self.service = service
     }
     
+    // MARK: Helpers
     private func findRepositories(with query: String) {
         service.request(.search(matching: query)) {[weak self] result in
             switch result {

@@ -33,7 +33,12 @@ extension CommitsViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommitCellId", for: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
+        
+        if let cellViewModel = viewModel.viewModelForCommit(at: indexPath) {
+            cell.textLabel?.text = cellViewModel.message
+            cell.detailTextLabel?.text = "\(cellViewModel.authorName) - \(cellViewModel.authorEmail)"
+        }
+        
         return cell
     }
 }
